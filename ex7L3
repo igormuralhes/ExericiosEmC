@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+EXERCÍCIO 7 - Leia um valor inteiro N. Apresente o quadrado de cada um dos valores pares, de 1 até N,
+inclusive N, se for o caso.
+*/
+
+int main()
+{
+    int i, valor, quadrado;
+    
+    printf("\tDigite um valor inteiro: ");
+    scanf("%d", &valor);
+    
+    for(i=2; i<=valor;i+=2){
+        quadrado = i * i;
+        printf(" %4d ", quadrado);
+    }
+
+    return 0;
+}
