@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+EXERCÍCIO 3 - Faça um programa que some os números ímpares entre 1 e 1000 e imprima a resposta.
+*/
+
+int main()
+{
+    int i;
+    int soma;
+    
+    for(i=1; i <= 1000; i+=2){
+        soma += i;
+        printf("\n%d", soma);
+    }
+    return 0;
+}
