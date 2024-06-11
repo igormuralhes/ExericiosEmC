@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+EXERCÍCIO 13 - Faça um programa que peça ao usuário um número inteiro maior que 2 e diga se o número
+informado é primo ou não.
+*/
+
+int main()
+{
+    int valor, i, divisores=0, opcao;
+    
+    do{
+        do{
+            printf("Digite um numero inteiro maior que 2: ");
+            scanf("%d", &valor);
+        }
+        while(valor<2);
+        
+        for(i=2; i<=valor/2; i++){
+            if(valor % i == 0){
+                printf("%d", i);
+                divisores++;
+            }
+        }
+        
+        printf("\n");
+        
+        if(divisores!=0)
+            printf("%d nao e primo\n", valor);
+        else 
+            printf("%d e primo\n", valor);
+        
+        printf("\n1 - Digitar outro valor\n2 - Sair\n");
+        scanf("%d", &opcao);
+    }
+    while(opcao != 2);
+    
+    return 0;
+}
