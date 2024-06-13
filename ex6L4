@@ -1,0 +1,42 @@
+#include <stdlib.h>
+#include <stdio.h>
+/*
+EXERCÍCIO 6 - Faça um programa que leia 10 números reais e os armazene em um vetor. Em seguida, leia um
+código inteiro e faça uma das ações abaixo:
+0 – finaliza o programa;
+1 – imprime o vetor na ordem do início ao fim;
+2 – imprime o vetor na ordem inversa (do fim para o início).
+O programa deve funcionar até que o usuário digite 0 para finalizar.
+*/
+
+int main()
+{
+    float reais[10];
+    int i, opcao;
+    
+    for(i=0; i<10; i++){
+            printf("Digite um número inteiro: ");
+            scanf("%f", &reais[i]);
+        }
+
+    do{
+        printf("\nEscolha uma opcao: \n\t0 - Finalizar o programa\n\t1 - Imprimir o vetor em ordem crescente\n\t2 - Imprimir o vetor em orde descrescente\n");
+        scanf("%d", &opcao);
+        
+        if(opcao == 1){
+            printf("\n1 - VETOR CRESCENTE\n");
+            for(i=0; i<10; i++){
+                printf("%.2f ", reais[i]);
+            }
+        }
+        if(opcao == 2){
+            printf("\n1 - VETOR DECRESCENTE\n");
+            for(i=9; i>=0; i--){
+                printf("%.2f ", reais[i]);
+            }
+        }
+        
+    }while(opcao != 0);
+        printf("\nFINALIZANDO PROGRAMA");
+    return 0;
+}
