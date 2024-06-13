@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 /*
-EXERCÍCIO 8 - Crie um programa que preencha uma matriz 5x10 com números inteiros. Em seguida faça:
+EXERCÍCIO 9 - Crie um programa que preencha uma matriz 5x10 com números inteiros. Em seguida faça:
 a) some cada uma das linhas armazenando o resultado em um vetor;
 b) some cada uma das colunas armazenando o resultado em um vetor;
 c) Imprima os dois vetores identificando qual é a soma das linhas e qual é a soma das colunas.
