@@ -1,0 +1,56 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+/*
+EXERCÍCIO 8 - Crie um programa que preencha uma matriz 5x10 com números inteiros. Em seguida faça:
+a) some cada uma das linhas armazenando o resultado em um vetor;
+b) some cada uma das colunas armazenando o resultado em um vetor;
+c) Imprima os dois vetores identificando qual é a soma das linhas e qual é a soma das colunas.
+*/
+
+int main()
+{
+    srand(time(NULL));
+    int mat[5][10];
+    int vetl[5]; //tem que ser setado dessa forma e não int vet[]={0}, se não gera erro na saída
+    int vetc[10];//tem que ser setado dessa forma e não int vet[]={0}, se não gera erro na saída
+    int i, j, soma=0;
+    
+    for(i=0; i<5; i++)
+        for(j=0; j<10; j++)
+            mat[i][j] = rand() % 100;
+    
+    for(i=0; i<5; i++){
+        for(j=0; j<10; j++){
+            printf("%3d", mat[i][j]);
+        }
+        printf("\n");
+    }
+    
+    for(i=0; i<5; i++){
+        soma=0;
+        for(j=0; j<10; j++){
+            soma += mat[i][j];
+        }
+        vetl[i] = soma;
+    }
+    
+    printf("\n");
+    for(j=0; j<10; j++){
+        soma=0;
+        for(i=0; i<5; i++){
+            soma += mat[i][j];
+        }
+        vetc[j] = soma;
+    }
+    
+    for(i=0; i<5; i++){
+        printf("%3d ", vetl[i]);
+    }
+    
+    printf("\n");
+    for(j=0; j<10; j++){
+        printf("%3d ", vetc[j]);
+    }
+    return 0;
+}
