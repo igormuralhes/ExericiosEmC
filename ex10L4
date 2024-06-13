@@ -1,0 +1,54 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+/*
+EXERCÍCIO 10 - Dadas duas matrizes A e B 3 x 3, faça um programa para calcular a soma das matrizes e salvar em uma matriz C. Imprima as três matrizes.
+*/
+
+int main()
+{
+    srand(time(NULL));
+    int a[3][3], b[3][3], c[3][3];
+    int i, j;
+    
+    for(i=0; i<3; i++){
+        for(j=0; j<3; j++){
+            a[i][j] = rand() % 100;
+            b[i][j] = rand() % 100;
+        }
+    }
+    
+    for(i=0; i<3; i++){
+        for(j=0; j<3; j++){
+            c[i][j] = a[i][j] + b[i][j];
+        }
+    }
+    
+    //matriz a
+    printf("\nMatriz A\n");
+    for(i=0; i<3; i++){
+        for(j=0; j<3; j++){
+            printf("%3d ", a[i][j]);
+        }
+        printf("\n");
+    }
+    
+    //matriz b
+    printf("\n\nMatriz B\n");
+    for(i=0; i<3; i++){
+        for(j=0; j<3; j++){
+            printf("%3d ", b[i][j]);
+        }
+        printf("\n");
+    }
+    
+    //matriz c soma das matrizes
+    printf("\n\nMatriz C - Soma das matrizes\n");
+    for(i=0; i<3; i++){
+        for(j=0; j<3; j++){
+            printf("%3d ", c[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
