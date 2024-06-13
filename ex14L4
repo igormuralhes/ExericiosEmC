@@ -1,0 +1,44 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+/*
+EXERCÍCIO 14 - Faça um programa que imprima na tela apenas os valores abaixo da diagonal principal de uma matriz 4 x 4.
+*/
+
+int main()
+{
+    srand(time(NULL));
+    int tam=4;
+    int a[tam][tam];
+    int i, j;
+    
+    for(i=0; i<tam; i++){
+        for(j=0; j<tam; j++){
+            a[i][j] = rand() % 100;
+        }
+    }
+    
+    //matriz a
+    printf("\n\tMatriz\n");
+    for(i=0; i<tam; i++){
+        for(j=0; j<tam; j++){
+            printf("%3d ", a[i][j]);
+        }
+        printf("\n");
+    }
+    
+    
+    //Diagonal principal
+    printf("\n\n\tAbaixo da Diagonal Principal\n");
+    for(i=0; i<tam; i++){
+        for(j=0; j<tam; j++){
+            if(i>j)
+                printf("%3d ", a[i][j]);
+            else
+                printf("    ");
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
