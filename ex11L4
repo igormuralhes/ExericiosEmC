@@ -1,0 +1,39 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+/*
+EXERCÍCIO 11 - Faça um programa que imprima na tela a diagonal principal de uma matriz 5 x 5.
+*/
+
+int main()
+{
+    srand(time(NULL));
+    int tam = 5;
+    int a[tam][tam];
+    int i, j;
+    
+    for(i=0; i<tam; i++){
+        for(j=0; j<tam; j++){
+            a[i][j] = rand() % 100;
+        }
+    }
+    
+    //matriz a
+    printf("\nMatriz A\n");
+    for(i=0; i<tam; i++){
+        for(j=0; j<tam; j++){
+            printf("%3d ", a[i][j]);
+        }
+        printf("\n");
+    }
+    
+    
+    //Diagonal principal
+    printf("\n\nDiagonal Principal\n");
+    for(i=0; i<tam; i++){
+            printf("%3d ", a[i][i]);
+        printf("\n");
+    }
+    
+    return 0;
+}
