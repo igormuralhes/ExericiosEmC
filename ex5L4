@@ -1,0 +1,125 @@
+#include <stdlib.h>
+#include <stdio.h>
+/*
+EXERCÍCIO 5 - Faça um programa que receba a temperatura média de cada mês do ano, armazenando-as em um vetor. Ao final, mostre a maior e a menor temperatura do ano e em que mês 
+ocorreram (mostrar o mês por extenso: janeiro, fevereiro ...). Desconsidere empates.
+*/
+
+int main()
+{
+    float temp[12]={0};
+    float maiorTemp=-273.0;
+    float menorTemp=273.0;
+    int i, indiceMaior=0, indiceMenor=0;
+    
+    for(i=0; i<12; i++){
+        printf("Insira a tempertura do mês %d: ", i+1);
+        scanf("%f", &temp[i]);
+    }
+    
+    printf("\n");
+    //Para maior temperatura
+    for(i=0; i<12; i++){
+        if(temp[i] > maiorTemp){
+            maiorTemp = temp[i];
+            indiceMaior = i;
+        }
+    }
+    
+    for(i=0; i<12; i++){
+        if(temp[i] < menorTemp){
+            menorTemp = temp[i];
+            indiceMenor = i;
+        }
+    }
+    
+    for(i=0; i<12; i++){
+        if(temp[i] == maiorTemp)
+            printf("\nMaior Temperatura %.1f C no mes de ", temp[i]);
+    }
+    
+    switch(indiceMaior){
+        case 0:
+            printf("janeiro.");
+            break;
+        case 1:
+            printf("fevereiro.");
+            break;
+        case 2:
+            printf("marco.");
+            break;
+        case 3:
+            printf("abril.");
+            break;
+        case 4:
+            printf("maio.");
+            break;
+        case 5:
+            printf("junho.");
+            break;
+        case 6:
+            printf("julho.");
+            break;
+        case 7:
+            printf("agosto.");
+            break;
+        case 8:
+            printf("setembro.");
+            break;
+        case 9:
+            printf("outubro.");
+            break;
+        case 10:
+            printf("novembro.");
+            break;
+        case 11:
+            printf("dezembro.");
+            break;
+    }
+    
+    for(i=0; i<12; i++){
+        if(temp[i] == menorTemp)
+            printf("\nMenor Temperatura %.1f C no mes de ", temp[i]);
+    }
+    
+    switch(indiceMenor){
+        case 0:
+            printf("janeiro.");
+            break;
+        case 1:
+            printf("fevereiro.");
+            break;
+        case 2:
+            printf("marco.");
+            break;
+        case 3:
+            printf("abril.");
+            break;
+        case 4:
+            printf("maio.");
+            break;
+        case 5:
+            printf("junho.");
+            break;
+        case 6:
+            printf("julho.");
+            break;
+        case 7:
+            printf("agosto.");
+            break;
+        case 8:
+            printf("setembro.");
+            break;
+        case 9:
+            printf("outubro.");
+            break;
+        case 10:
+            printf("novembro.");
+            break;
+        case 11:
+            printf("dezembro.");
+            break;
+    }
+    
+    return 0;
+}
