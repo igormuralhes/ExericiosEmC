@@ -1,0 +1,81 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+/*
+EXERCÍCIO 4 - Uma pequena loja de artesanato possui apenas um vendedor e comercializa 10 tipos de objetos 
+diferentes. O vendedor recebe um salário de R$1100,00 acrescido de 5% do valor total de suas vendas. O valor 
+unitário dos objetos deve ser informado e armazenado em um vetor; a quantidade vendida de cada objeto deve ficar 
+em outro vetor, mas na mesma posição. Crie um programa que receba os preços e as quantidades vendidas, armazenando-os
+em seus respectivos vetores. Depois, determine e mostre:
+a) A quantidade vendida, valor unitário e valor total de cada objeto. Ao final, deverão ser mostrados o valor total
+das vendas e o valor da comissão que será paga ao vendedor.
+b) O valor do objeto mais vendido e sua posição no vetor (em caso de empates mostre todos empatados).
+*/
+
+int main()
+{
+    srand(time(NULL));
+    float valor[10]={0};
+    int quantidade[10] = {0};
+    float vendasTotal[10];
+    float soma=0.0, valorMaisV;
+    int i;
+    int maisVendido = 0;
+    /*
+    for(i=0; i<10; i++){
+        printf("Insira o valor de cada item: ");
+        scanf("%f", &valor[i]);
+        printf("Insira a quantidade vendida do item: ");
+        scanf("%d", &quantidade[i]);
+        printf("\n");
+        soma += vendasTotal[i];
+    }*/
+    for(i=0; i<10; i++){
+        valor[i] = rand() % 100;
+        quantidade[i] = rand() % 10;
+        soma += vendasTotal[i];
+    }
+    
+    for(i=0; i<10; i++){
+        vendasTotal[i] = valor[i] * quantidade[i];
+        soma += vendasTotal[i];
+    }
+
+
+    //A quantidade vendida
+    printf("\nQuantidade Vendida:\n");
+    for(i=0; i<10; i++){
+        printf("\titem %d: %d\n", i+1, quantidade[i]);
+    }
+
+    //Valor unitário
+    printf("\nValor unitário:\n");
+    for(i=0; i<10; i++){
+        printf("\titem %d: %.2f\n", i+1, valor[i]);
+    }
+    
+    //Total de vendas de cada item
+    printf("\nTotal de vendas do item:\n");
+    for(i=0; i<10; i++){
+        printf("\titem %d: %.2f\n", i+1, vendasTotal[i]);
+    }
+    
+    //Imprimindo o valor total das vendas
+    printf("\n\nValor total de vendas: %.2f", soma);
+    printf("\nValor da comissão: %.2f", soma*0.05);
+    
+    for(i=0; i<10; i++){
+        if(quantidade[i]>maisVendido){
+            maisVendido = quantidade[i];
+        }
+    }
+    
+    printf("\nO(s) item(ns) mais vendido(s):");
+    for(i=0; i<10; i++){
+        if(quantidade[i]==maisVendido){
+            printf("\n\tItem %d no valor de R$ %2.f", i+1, valor[i]);
+        }
+    }
+    
+    return 0;
+}
