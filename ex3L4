@@ -1,0 +1,37 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+/*
+EXERCÍCIO 3 - Escrever um programa que lê um vetor N de tamanho 20 e o imprime na tela. Em seguida, troque
+o 1o elemento com o último, o 2a com o penúltimo, ... até o 10a com o 11o. Imprima o vetor N
+modificado.
+*/
+
+int main()
+{
+    srand(time(NULL));
+    int n[20];
+    int i, copia, fim=19;
+    
+    for(i=0; i<20; i++){
+        n[i] = rand()%10;
+    }
+    
+    for(i=0; i<20; i++){
+        printf("%d ", n[i]);    
+    }
+    
+    printf("\n");
+    for(i=0; i<10; i++){
+        copia = n[i];
+        n[i] = n[fim];
+        n[fim] = copia;
+        fim--;
+    }
+    
+    printf("\n");
+    for(i=0; i<20; i++){
+        printf("%d ", n[i]);    
+    }
+    return 0;
+}
