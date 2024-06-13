@@ -1,0 +1,46 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+/*
+EXERCÍCIO 13 - Faça um programa para calcular a transposta de uma matriz 5 x 4. Imprima as duas matrizes na tela.
+*/
+
+int main()
+{
+    srand(time(NULL));
+    int tamA = 5, tamB = 4;
+    int a[tamA][tamB], b[tamB][tamA] ;
+    int i, j;
+    
+    for(i=0; i<tamA; i++){
+        for(j=0; j<tamB; j++){
+            a[i][j] = rand() % 100;
+        }
+    }
+    
+    //matriz a
+    printf("\nMatriz A\n");
+    for(i=0; i<tamA; i++){
+        for(j=0; j<tamB; j++){
+            printf("%3d ", a[i][j]);
+        }
+        printf("\n");
+    }
+    
+    for(i=0; i<tamA; i++){
+        for(j=0; j<tamB; j++){
+            b[j][i] = a[i][j];
+        }
+    }
+    
+    //Matriz transposta
+    printf("\nMatriz Transposta\n");
+    for(i=0; i<tamB; i++){
+        for(j=0; j<tamA; j++){
+            printf("%3d ", b[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
